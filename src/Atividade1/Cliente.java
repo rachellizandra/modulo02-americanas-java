@@ -1,4 +1,4 @@
-package teste;
+package Atividade1;
 
 public class Cliente {
 

@@ -1,7 +1,21 @@
-package teste;
+package Atividade1;
 import java.util.Scanner;
 
 public class Main {
+
+    /**
+     *
+     * Sistema Bancário
+     * - Deposito
+     * - Sacar
+     * - Transferir
+     *
+     * - Transferir apenas se tiver saldo
+     * - Sacar apenas se tiver saldo
+     *
+     * - Todos os atributos tem que ser privados
+     *
+     */
     public static void main(String[] args) {
 
         Conta conta1 = new Conta();
