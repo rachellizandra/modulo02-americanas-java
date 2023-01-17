@@ -1,19 +1,26 @@
+package Aula01;
+
 import java.util.Scanner;
 
 public class Aula01Carro {
     public static void main(String[] args) {
 
+        // VERIFICAR O CÓDIGO MELHORADO NO PROJETO EXERCICIOSDELOGPROG NA PASTA AULA CONSTRUTORES
+
         Scanner scan = new Scanner(System.in);
 
-        String cor = "vermelho";
-        String marca = "BMW";
-        String modelo = "X5";
-        boolean isLigado = true;
-        int velocidade = 0;
+//        String cor = "vermelho";
+//        String marca = "BMW";
+//        String modelo = "X5";
+//        boolean isLigado = true;
+//        int velocidade = 0;
+
+        Carro carrodaRachel = new Carro();
+        carrodaRachel.isLigado = true;
 
         int escolha;
 
-        while(isLigado) {
+        while(carrodaRachel.isLigado) {
             System.out.println();
             System.out.println("Escolha uma operação");
             System.out.println("1 - Acelerar");
@@ -25,20 +32,19 @@ public class Aula01Carro {
           escolha = scan.nextInt();
 
           if(escolha == 0) {
-              isLigado = false;
+              carrodaRachel.isLigado = false;
           } else if(escolha == 1) {
-              velocidade += 10;
-              System.out.printf("Você acelerou e sua velocidade é de: %dkm/h", velocidade);
+              carrodaRachel.velocidade += 10;
+              System.out.printf("Você acelerou e sua velocidade é de: %dkm/h", carrodaRachel.velocidade);
           } else if(escolha ==2) {
-              if(velocidade > 0) {
-                  velocidade -= 10;
-                  System.out.printf("Você freou e sua velocidade é de: %dkm/h", velocidade);
+              if(carrodaRachel.velocidade > 0) {
+                  carrodaRachel.velocidade -= 10;
+                  System.out.printf("Você freou e sua velocidade é de: %dkm/h", carrodaRachel.velocidade);
               }else {
-                  System.out.println("Carro parado");
-                  isLigado = false;
+                  carrodaRachel.isLigado = false;
               }
           } else if(escolha ==3) {
-              System.out.println("O seu " + modelo + " está atualmente a " + velocidade + "km/h");
+              System.out.println("O seu " + carrodaRachel.modelo + " está atualmente a " + carrodaRachel.velocidade + "km/h");
           }
 
         }
