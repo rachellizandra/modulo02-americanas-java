@@ -2,12 +2,12 @@ package AvaliacaoFinal.Hospital;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Medico extends Funcionario {
     private String especializacao;
     private int qtdDiagnosticos;
     private int qtdExames;
-    private Paciente paciente;
 
     public Medico() {
 
@@ -20,12 +20,22 @@ public class Medico extends Funcionario {
         this.qtdExames = qtdExames;
     }
 
-    public final void prescreverReceita(String paciente) {
-        System.out.println("\nPrescrição de receita: \nMédico: " + getNome() +  "\nPaciente: " + paciente);
+    //O método final abaixo foi feito para não ser sobreescrito nas subclasses pois esta é uma forma padrão de prescrição médica
+    public final void prescreverReceita(Paciente paciente) {
+        System.out.println("Prescrição de receita: \nMédico: " + getNome() +  "\nPaciente: " + paciente.getNome());
     }
 
-    public void realizarDiagnostico(ArrayList<String> sintomas) {
-        this.paciente.listarSintomas(sintomas, "Sintomas relatados:");
+    public void realizarDiagnostico(List<String> sintomas) {
+        int cont = 0;
+        for(int i = 0; i < sintomas.size(); i++) {
+            cont++;
+            //System.out.println(sintomas.get(i));
+        }
+        if(cont <= 3) {
+            System.out.println("Diagnóstico: A partir dos sintomas relatados, você deve fazer um exame de sangue");
+        } else {
+            System.out.println("Diagnóstico: Você precisa fazer um exame mais completo para ser dignosticado");
+        }
     }
 
     public int getQtdDiagnosticos() {
@@ -58,7 +68,6 @@ public class Medico extends Funcionario {
                 "\nNome: " + getNome() +
                 "\nEspecialização: '" + especializacao + '\'' +
                 ", Numero de diagnosticos: " + qtdDiagnosticos +
-                ", Numero de exames: " + qtdExames +
-                ", Paciente: " + paciente;
+                ", Numero de exames: " + qtdExames;
     }
 }

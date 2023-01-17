@@ -6,7 +6,7 @@ public class Sala {
     private String numeroReserva;
     private String tempoDeEspera;
     private int[] posicaoNaFila;
-    private Pessoa[] pessoa;
+
 
     public Sala(String numeroReserva, String tempoDeEspera, int[] posicaoNaFila) {
         this.numeroReserva = numeroReserva;
@@ -42,11 +42,4 @@ public class Sala {
         this.posicaoNaFila = posicaoNaFila;
     }
 
-    public Pessoa getPessoa(int indice) {
-        return pessoa[indice];
-    }
-
-    public void setPessoa(Pessoa[] pessoa) {
-        this.pessoa = pessoa;
-    }
 }

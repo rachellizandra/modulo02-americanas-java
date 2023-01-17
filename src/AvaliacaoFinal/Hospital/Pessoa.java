@@ -6,7 +6,6 @@ public abstract class Pessoa {
     // Além disso, foi criado o método equals() e toString() nesta classe
     private String nome;
     private String registro;
-
     public Pessoa() {
 
     }

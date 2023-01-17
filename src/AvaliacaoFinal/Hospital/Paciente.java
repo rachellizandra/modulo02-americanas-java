@@ -1,36 +1,22 @@
 package AvaliacaoFinal.Hospital;
-import java.util.ArrayList;
+
+import java.util.List;
 
 public class Paciente extends Pessoa {
     private String situacaoAtual;
-    private String[] sintomas;
+    private List<String> sintomas;
 
-    public Paciente(String nome, String registro, String situacaoAtual, String[] sintomas) {
+    public Paciente(String nome, String registro, String situacaoAtual, List<String> sintomas) {
         super(nome, registro);
         this.situacaoAtual = situacaoAtual;
         this.sintomas = sintomas;
     }
 
-//    public String[] listarSintomas(String[] sintomas) {
-//        String[] sintomasEncontrados = new String[sintomas.length];
-//        int contSintomas = 0;
-//
-//        for(int i = 0; i < sintomas.length; i++) {
-//            sintomasEncontrados[contSintomas++] = sintomas[i];
-//        }
-//
-//        String[] retorno = new String[contSintomas];
-//        for(int i = 0; i < contSintomas; i++) {
-//            retorno[i] = sintomasEncontrados[i];
-//        }
-//        return retorno;
-//    }
-
-    public void listarSintomas(ArrayList<String> sintomas, String cabecalho) {
+    public void listarSintomas(String cabecalho) {
         System.out.printf(cabecalho); // mostrar cabeçalho
 
         for (String item : sintomas)
-            System.out.printf(" %s", item);
+            System.out.printf(" %s,", item);
         System.out.println();
     }
 
@@ -42,11 +28,11 @@ public class Paciente extends Pessoa {
         this.situacaoAtual = situacaoAtual;
     }
 
-    public String[] getSintomas() {
+    public List<String> getSintomas() {
         return sintomas;
     }
 
-    public void setSintomas(String[] sintomas) {
+    public void setSintomas(List<String> sintomas) {
         this.sintomas = sintomas;
     }
 
